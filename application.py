@@ -75,20 +75,35 @@ DEMO_HTML = """
             body {
                 font-family: sans-serif;
             }
+
+            .model-info {
+                color: #8b8b8bff;
+            }
+
+            input {
+                padding: 10px;
+                font-size: 16px;
+                width: 50%;
+            }
+
+            textarea {
+                padding: 10px;
+                font-size: 16px;
+                width: 50%;
+                height: 100px;
+            }
         </style>
     </head>
     <body>
         <div>
             <h1>Text Classifier Demo</h1>
-            <p>Model loaded: {{ model_loaded }}</p>
-            <p>Model path: {{ model_path }}</p>
-            <p></p>
+            <p class="model-info">Model loaded: {{ model_loaded }}</p>
+            <p class="model-info">Model path: {{ model_path }}</p>
             <p>Enter text to classify: </p>
             <form method="POST" action="/predict-form">
                 <div><textarea name="message" rows="4" cols="50"></textarea></div>
-                <div><input type="submit" value="Submit">Predict</div>
+                <div><input type="submit" value="Predict"></div>
             </form>
-            <br>
             <p>Prediction: {{ prediction }}</p>
             <p>Error: {{ error }}</p>
         </div>
